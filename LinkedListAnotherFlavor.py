@@ -69,6 +69,22 @@ operations
                 break
             count+=1
             itr = itr.next
+            
+    #to reverse a linked list
+    def reverse(self):
+            if self.head is None:
+                return
+            self.reverse_list(self.head, None)
+            
+    def reverse_list(self, current, previous):
+        
+        if current.next is None:
+            self.head = current
+            current.next = previous
+            return
+        next_val = current.next
+        current.next = previous
+        self.reverse_list(next_val, current)
         
 ll = LinkedList()
 
